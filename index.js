@@ -1,13 +1,21 @@
 const express = require("express")
 const helmet = require("helmet")
 
+const projectsRouter = require("./routers/projects")
+const resourcesRouter = require("./routers/resources")
+const tasksRouter = requrie("./routers/tasks.js")
 
-const sever = express()
+
+const server = express()
 const port = process.env.PORT || 5000
 
 
 Server.use(helmet())
 server.use(express.json())
+
+server.use(projectsRouter)
+server.use(resourcesRouter)
+server.use(tasksRouter)
 
 
 server.use((err, req, res, next) => {
