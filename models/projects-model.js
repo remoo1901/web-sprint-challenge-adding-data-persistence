@@ -1,12 +1,12 @@
 const db = require("../data/config")
 
 function find(){
-  return  db("project")
+  return  db("projects")
 }
 
 
 function findById(id){
-    return db("project")
+    return db("projects")
            .where("id", id)
            .first
 }
