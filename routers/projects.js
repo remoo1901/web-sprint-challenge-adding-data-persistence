@@ -81,7 +81,7 @@ router.delete("/projects/:id", async (req, res, next) => {
     if (del) {
       res.json({ Deleted: del });
     } else {
-      res.status(404).json({ message: "Could not find scheme with given id" });
+      res.status(404).json({ message: `Could not find project with id # ${req.params.id}` });
     }
   } catch (err) {
     next(err);

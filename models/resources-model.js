@@ -11,8 +11,27 @@ function findById(id){
            .first
 }
 
+function addResource(resource){
+  return db("resources")
+          .insert(resource)
+}
+
+function updateResource(resource,id){
+  return db("resources")
+           .update(resource)
+           .where("id", id)
+}
+
+function deleteResource(id){
+  return db("resources")
+          .where({id})
+          .del()
+}
 
 module.exports = {
     find,
-    findById
+    findById,
+    addResource,
+    updateResource,
+    deleteResource
 }
